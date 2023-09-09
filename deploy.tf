@@ -13,7 +13,6 @@ resource "helm_release" "prometheus" {
   name       = "prometheus"
   repository = "https://prometheus-community.github.io/helm-charts"
   chart      = "prometheus"
-  #version    = "your-prometheus-version" 
   namespace   = "monitoring"
 
   values = [
@@ -37,7 +36,6 @@ resource "helm_release" "blackbox-exporter" {
   name       = "blackbox-exporter"
   repository = "https://prometheus-community.github.io/helm-charts"
   chart      = "prometheus-blackbox-exporter"
-  #version    = "your-prometheus-version" 
   namespace   = "monitoring"
 
   values = [
