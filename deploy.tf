@@ -1,5 +1,5 @@
 provider "kubernetes" {
-  config_path = "/home/rizwan/.kube/config"
+  config_path = var.config_path
   context    = "cluster-admin@ionos_k8s"
 }
 
