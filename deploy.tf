@@ -1,5 +1,5 @@
 provider "kubernetes" {
-  config_path = var.config_path
+  config_path = env.KUBECONFIG
   context    = "cluster-admin@ionos_kube"
 }
 
