@@ -1,0 +1,20 @@
+server:
+  service:
+    enabled: true
+    type: LoadBalancer
+
+extraScrapeConfigs: |
+  - job_name: 'blackbox_https_ionos'
+    metrics_path: /probe
+    params:
+      module: [http_2xx]  # Use the same module name you defined in Blackbox Exporter's config
+    static_configs:
+      - targets: [ "https://mail.ionos.com:443"]
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: blackbox-exporter-prometheus-blackbox-exporter:9115
+#            replacement: 85.215.167.11:9115
