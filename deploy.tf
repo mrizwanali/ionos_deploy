@@ -1,6 +1,6 @@
 provider "kubernetes" {
   config_path = var.config_path
-  context    = "cluster-admin@ionos_k8s"
+  context    = var.context
 }
 
 resource "helm_release" "prometheus" {
