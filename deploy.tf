@@ -1,9 +1,5 @@
-variable "kube_config_path" {
-  description = "Path to the Kubernetes config file"
-}
-
 provider "kubernetes" {
-  config_path = var.kube_config_path
+  config_path = "/home/rizwan/.kube/config"
   context    = "cluster-admin@ionos_kube"
 }
 
