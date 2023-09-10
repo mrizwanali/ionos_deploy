@@ -1,7 +1,6 @@
 # This is a comment in the module
 provider "kubernetes" {
-  #config_path = "/home/rizwan/.kube/config"
-  #context    = "cluster-admin@ionos_kube"
+ #context    = "cluster-admin@ionos_kube"
 }
 
 # Define a Kubernetes namespace for monitoring
