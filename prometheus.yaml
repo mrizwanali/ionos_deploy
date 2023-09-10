@@ -7,7 +7,7 @@ extraScrapeConfigs: |
   - job_name: 'blackbox_https_ionos'
     metrics_path: /probe
     params:
-      module: [http_2xx]  # Use the same module name you defined in Blackbox Exporter's config
+      module: [http_2xx]  
     static_configs:
       - targets: [ "https://mail.ionos.com:443"]
     relabel_configs:
@@ -17,4 +17,4 @@ extraScrapeConfigs: |
         target_label: instance
       - target_label: __address__
         replacement: blackbox-exporter-prometheus-blackbox-exporter:9115
-#            replacement: 85.215.167.11:9115
+#       replacement: 85.215.167.11:9115
