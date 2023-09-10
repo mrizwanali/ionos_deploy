@@ -3,12 +3,6 @@ provider "kubernetes" {
   context    = "cluster-admin@ionos_kube"
 }
 
-resource "kubernetes_namespace" "monitoring" {
-  metadata {
-    name = "monitoring" 
-  }
-}
-
 resource "helm_release" "prometheus" {
   name       = "prometheus"
   repository = "https://prometheus-community.github.io/helm-charts"
